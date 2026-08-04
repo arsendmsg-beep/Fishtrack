@@ -1,0 +1,527 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FishTrack</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="Icono.png" type="image/x-icon">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="background-opacity"></div>
+
+
+<div class="bienvenida">
+
+<div class="textoBienvenida">
+
+<h1>Bienvenido a FishTrack</h1>
+
+<p>
+Toda la información para una pesca exitosa
+</p>
+
+</div>
+
+<img src="welcome.png" class="welcome" alt="FishTrack">
+
+</div>
+
+
+
+<div class="inicioInfo">
+
+
+<div class="telefono">
+
+<div class="pantallaTelefono">
+
+
+<img src="IconoFish.png" class="logoTelefono" alt="FishTrack">
+
+
+<h2 class="fishtrackTitulo">
+FishTrack
+</h2>
+
+
+<p class="fishtrackDescripcion">
+Toda la información que necesitas para una pesca exitosa.
+</p>
+
+
+
+<div class="menuTelefono">
+
+
+<button class="tarjeta abrirMapa">
+
+<div class="iconoTarjeta">
+🗺️
+</div>
+
+<h3>
+Mapa
+</h3>
+
+</button>
+
+
+
+<button class="tarjeta wikipedia">
+
+<div class="iconoTarjeta">
+🐟
+</div>
+
+<h3>
+Wiki
+</h3>
+
+</button>
+
+
+
+<button class="tarjeta climaTarjeta abrirClimaUsuario">
+
+<div class="iconoTarjeta">
+🌤️
+</div>
+
+<h3>
+Temperatura
+</h3>
+
+</button>
+
+
+
+<button class="tarjeta consejosTarjeta">
+
+<div class="iconoTarjeta">
+🎣
+</div>
+
+<h3>
+
+</h3>
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="climaMapaBtn abrirClimaMapa">
+⛅
+</div>
+
+<div class="mapa">
+
+<div class="centroMapa"></div>
+
+</div>
+<div class="climaMapaPanel">
+
+<div class="climaMapaCaja">
+
+<button class="cerrarClimaMapa">
+❌
+</button>
+
+<h2>🗺️ Clima del punto</h2>
+
+<p>
+🌡️ Temperatura:
+<span class="tempMapa">-</span>
+</p>
+
+<p>
+💨 Viento:
+<span class="vientoMapa">-</span>
+</p>
+
+<p>
+🧭 Dirección:
+<span class="direccionMapa">-</span>
+</p>
+
+<p>
+🌊 Marea:
+<span class="mareaMapa">-</span>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="infoMapa">
+
+🧭
+
+<div>
+
+<span class="lat">
+9.976° N
+</span>
+
+<br>
+
+<span class="lng">
+84.829° W
+</span>
+
+</div>
+
+</div>
+
+
+<button class="cerrarMapa">
+❌ Cerrar mapa
+</button>
+
+
+<div class="climaMapaPanel">
+
+<div class="climaMapaCaja">
+
+<button class="cerrarClimaMapa">
+❌
+</button>
+
+
+<h3>
+🗺️ Clima del punto
+</h3>
+
+
+<p>
+🌡️ Temperatura:
+<span class="temperaturaMapa">
+-
+</span>
+</p>
+
+
+<p>
+💨 Viento:
+<span class="vientoMapa">
+-
+</span>
+</p>
+
+
+<p>
+🧭 Dirección:
+<span class="direccionMapa">
+-
+</span>
+</p>
+
+
+<p>
+🌊 Marea:
+<span class="mareaMapa">
+-
+</span>
+</p>
+
+
+</div>
+
+</div>
+<div class="wikiPanel">
+
+<div class="wikiCaja">
+
+<button class="cerrarWiki">
+❌
+</button>
+
+
+<h2 class="tituloWiki">
+
+<img src="IconoWiki.png" alt="Wiki FishTrack">
+
+FishTrack Wiki
+
+</h2>
+
+
+
+<div class="busquedaPeces">
+
+
+<input 
+type="text"
+id="buscarPez"
+placeholder="🔎 Buscar pez...">
+
+
+
+<select id="filtroPez">
+
+<option value="todos">
+Todos los peces
+</option>
+
+<option value="marea-alta">
+🌊 Marea alta
+</option>
+
+<option value="marea-baja">
+🌊 Marea baja
+</option>
+
+<option value="costero">
+🎣 Pesca costera
+</option>
+
+</select>
+
+
+
+<div class="pecesLista">
+
+
+
+<div class="pezCard" data-tipo="marea-alta costero">
+
+<img src="imagenes/PezVela.png" class="pezImagen">
+
+<h3 class="peznombre">
+Pez vela
+</h3>
+
+<a href="detalles.html?pez=pezvela" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-alta costero">
+
+<img src="imagenes/Dorado.png" class="pezImagen">
+
+<h3 class="peznombre">
+Dorado
+</h3>
+
+<a href="detalles.html?pez=dorado" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-alta">
+
+<img src="imagenes/Atun.png" class="pezImagen">
+
+<h3 class="peznombre">
+Atún
+</h3>
+
+<a href="detalles.html?pez=atun" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-alta">
+
+<img src="imagenes/Marlin.png" class="pezImagen">
+
+<h3 class="peznombre">
+Marlin azul
+</h3>
+
+<a href="detalles.html?pez=marlin" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-baja costero">
+
+<img src="imagenes/Robalo.png" class="pezImagen">
+
+<h3 class="peznombre">
+Róbalo
+</h3>
+
+<a href="detalles.html?pez=robalo" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-baja costero">
+
+<img src="imagenes/Pargo.png" class="pezImagen">
+
+<h3 class="peznombre">
+Pargo rojo
+</h3>
+
+<a href="detalles.html?pez=pargo" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+
+<div class="pezCard" data-tipo="marea-baja costero">
+
+<img src="imagenes/PezGallo.png" class="pezImagen">
+
+<h3 class="peznombre">
+Pez gallo
+</h3>
+
+<a href="detalles.html?pez=pezgallo" class="LinkDetalles">
+Más detalles
+</a>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="climaPanel">
+
+
+<div class="climaTelefonoCaja">
+
+
+<button class="cerrarClima">
+❌
+</button>
+
+
+
+<h2>
+🌤️ FishTrack Clima
+</h2>
+
+
+
+<button class="obtenerClima">
+📍 Usar mi ubicación
+</button>
+
+
+
+<div class="resultadoClima">
+
+
+<p>
+📍 Lugar:
+<span class="ubicacionClima">
+-
+</span>
+</p>
+
+
+
+<p>
+🌡️ Temperatura:
+<span class="temperatura">
+-
+</span>
+</p>
+
+
+
+<p>
+💨 Viento:
+<span class="viento">
+-
+</span>
+</p>
+
+
+
+<p>
+💧 Humedad:
+<span class="humedad">
+-
+</span>
+</p>
+
+
+
+<p>
+🌧️ Lluvia:
+<span class="lluvia">
+-
+</span>
+</p>
+
+
+
+<p>
+🎣 Pesca:
+<span class="estadoPesca">
+-
+</span>
+</p>
+
+
+
+</div>
+
+</div>
+
+</div>
+<div>
+<a href="" class="Us"></a>
+</div>
+
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

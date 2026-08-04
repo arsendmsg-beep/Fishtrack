@@ -1,0 +1,1419 @@
+﻿*{
+    box-sizing:border-box;
+}
+
+html{
+    scrollbar-width:none;
+}
+
+html::-webkit-scrollbar{
+    display:none;
+}
+
+
+body{
+
+    margin:0;
+
+    font-family:Arial,sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:white;
+
+}
+
+
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(5,36,84,.86),
+        rgba(4,11,30,.95)
+    ),
+
+    url("fondo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    z-index:-2;
+
+}
+
+
+
+.background-opacity{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle
+        rgba(79,195,255,.25),
+        transparent 45%
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+/* BIENVENIDA */
+
+
+.bienvenida{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    color:white;
+
+    text-align:center;
+
+    z-index:50000;
+
+    background:
+
+    linear-gradient(
+        rgba(5,36,84,.90),
+        rgba(4,11,30,.95)
+    ),
+
+    url("fondo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    animation:salirBienvenida 4s forwards;
+
+}
+
+
+
+.textoBienvenida h1{
+
+    font-size:45px;
+
+    margin:0 0 10px;
+
+}
+
+
+
+.textoBienvenida p{
+
+    font-size:18px;
+
+    opacity:.8;
+
+}
+
+
+
+.welcome{
+
+    width:220px;
+
+    margin-top:25px;
+
+    opacity:0;
+
+    animation:mostrarLogo 4s forwards;
+
+}
+
+
+
+@keyframes mostrarLogo{
+
+0%,40%{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+}
+
+
+60%,100%{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+@keyframes salirBienvenida{
+
+0%,75%{
+
+    opacity:1;
+
+}
+
+
+100%{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+}
+
+
+
+/* INICIO */
+
+
+.inicioInfo{
+
+    text-align:center;
+
+    padding:25px 20px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+
+.tituloInicio h1{
+
+    font-size:42px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.tituloInicio p{
+
+    opacity:.8;
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+
+
+/* TELEFONO */
+
+
+.telefono{
+
+    width:360px;
+
+    height:640px;
+
+    margin:40px auto;
+
+    border-radius:45px;
+
+    border:7px solid #1f1f1f;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:#000;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+
+
+.telefono::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:120px;
+
+    height:24px;
+
+    background:#111;
+
+    border-radius:20px;
+
+    z-index:10;
+
+}
+
+
+
+.pantallaTelefono{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    background:
+
+    linear-gradient(
+        rgba(5,36,84,.35),
+        rgba(4,11,30,.65)
+    ),
+
+    url("fondo.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+
+.logoTelefono{
+
+    position:relative;
+
+    top:5px;
+
+    left:-20px;
+
+    width:170px;
+
+    margin-bottom:10px;
+
+    animation:flotarLogo 4s ease-in-out infinite;
+
+}
+
+
+
+.pantallaTelefono h2{
+
+    font-size:38px;
+
+    margin:0;
+
+}
+
+
+
+.pantallaTelefono p{
+
+    max-width:250px;
+
+    opacity:.85;
+
+    line-height:1.6;
+
+    margin-top:15px;
+
+}
+
+
+
+@keyframes flotarLogo{
+
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.menuTelefono{
+
+    position:absolute;
+
+    bottom:18px;
+
+    left:12px;
+
+    right:12px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:10px;
+
+}
+
+
+
+.menuTelefono .tarjeta{
+
+    width:100%;
+
+    height:75px;
+
+    padding:8px 4px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(10,25,50,.85);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.35),
+
+    inset 0 0 15px rgba(79,195,255,.15);
+
+    transition:.25s;
+
+}
+
+
+
+.menuTelefono .tarjeta:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.menuTelefono .tarjeta:active{
+
+    transform:scale(.92);
+
+}
+
+
+
+.menuTelefono .iconoTarjeta{
+
+    font-size:28px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.menuTelefono h3{
+
+    display:block;
+
+    font-size:10px;
+
+    margin:0;
+
+    color:white;
+
+}
+
+
+
+
+/* CLIMA DEL BOTON DEL TELEFONO */
+
+
+.climaPanel{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:30000;
+
+}
+
+
+
+.climaTelefonoCaja{
+
+    width:360px;
+
+    max-width:90%;
+
+    background:
+
+    linear-gradient(
+
+        rgba(5,36,84,.95),
+
+        rgba(4,11,30,.98)
+
+    );
+
+    padding:25px;
+
+    border-radius:30px;
+
+    color:white;
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 35px rgba(79,195,255,.5);
+
+    animation:aparecerClima .3s ease;
+
+}
+
+
+
+@keyframes aparecerClima{
+
+from{
+
+    transform:scale(.8);
+
+    opacity:0;
+
+}
+
+
+to{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+}
+
+
+
+.climaTelefonoCaja h2{
+
+    color:#4fc3ff;
+
+    text-align:center;
+
+    margin-top:0;
+
+}
+
+
+
+.resultadoClima p{
+
+    background:rgba(255,255,255,.08);
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin:10px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+
+.ubicacionClima,
+.temperatura,
+.viento,
+.humedad,
+.lluvia,
+.estadoPesca{
+
+    color:#4fc3ff;
+
+    font-weight:bold;
+
+}
+
+
+
+.obtenerClima{
+
+    width:90%;
+
+    margin:15px auto;
+
+    display:block;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#4fc3ff;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+
+.obtenerClima:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(79,195,255,.7);
+
+}
+
+
+
+.cerrarClima,
+.cerrarWiki,
+.cerrarClimaMapa{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+.cerrarClima:hover,
+.cerrarWiki:hover,
+.cerrarClimaMapa:hover{
+
+    background:#e63946;
+
+    transform:scale(1.1);
+
+}
+
+.climaMapaBtn{
+
+    display:none;
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:rgba(20,20,20,.85);
+
+    color:white;
+
+    font-size:26px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    z-index:10005;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 0 20px rgba(79,195,255,.7);
+
+}
+
+
+
+.mapa{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9999;
+
+}
+
+
+
+.leaflet-container{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+
+.centroMapa{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:22px;
+
+    height:22px;
+
+    background:#ff3b30;
+
+    border:3px solid white;
+
+    border-radius:50%;
+
+    z-index:10001;
+
+    pointer-events:none;
+
+    box-shadow:0 0 15px red;
+
+}
+
+
+
+.centroMapa::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12px;
+
+    border:2px solid rgba(255,59,48,.6);
+
+    border-radius:50%;
+
+    animation:pulsoMapa 2s infinite;
+
+}
+
+
+
+@keyframes pulsoMapa{
+
+100%{
+
+    transform:scale(2);
+
+    opacity:0;
+
+}
+
+}
+
+
+
+.infoMapa{
+
+    display:none;
+
+    position:fixed;
+
+    left:15px;
+
+    bottom:20px;
+
+    z-index:10000;
+
+    background:rgba(20,20,20,.85);
+
+    padding:12px;
+
+    border-radius:15px;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+
+.cerrarMapa{
+
+    display:none;
+
+    position:fixed;
+
+    top:10px;
+
+    right:130px;
+
+    z-index:10000;
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(20,20,20,.85);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+/* CLIMA DEL MAPA */
+
+
+.climaMapaPanel{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:40000;
+
+}
+
+
+
+.climaMapaCaja{
+
+    width:300px;
+
+    background:
+
+    rgba(5,36,84,.95);
+
+    padding:20px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 0 30px rgba(79,195,255,.5);
+
+}
+
+
+
+.climaMapaCaja h2,
+.climaMapaCaja h3{
+
+    color:#4fc3ff;
+
+}
+
+
+
+.climaMapaCaja p{
+
+    background:
+
+    rgba(255,255,255,.08);
+
+    padding:10px;
+
+    border-radius:15px;
+
+    margin:10px 0;
+
+}
+
+
+
+.climaMapaCaja span{
+
+    color:#4fc3ff;
+
+    font-weight:bold;
+
+}
+
+.wikiPanel{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:20000;
+
+}
+
+
+
+.wikiCaja{
+
+    width:520px;
+
+    max-width:90%;
+
+    max-height:90vh;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    background:rgba(20,20,20,.92);
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    scrollbar-width:none;
+
+}
+
+
+
+.wikiCaja::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+
+.tituloWiki{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+.tituloWiki img{
+
+    width:80px;
+
+    height:80px;
+
+    object-fit:contain;
+
+}
+
+
+
+.tituloWiki h2{
+
+    margin:0;
+
+}
+
+
+
+/* BUSCADOR Y FILTRO */
+
+
+.busquedaPeces{
+
+    display:block;
+
+    width:100%;
+
+    margin:20px auto;
+
+}
+
+
+
+.busquedaPeces input,
+.busquedaPeces select{
+
+    margin:5px;
+
+}
+
+
+
+.pecesLista{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+#buscarPez{
+
+    width:240px;
+
+    padding:14px 18px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(79,195,255,.4);
+
+    outline:none;
+
+    background:rgba(5,36,84,.75);
+
+    color:white;
+
+    font-size:15px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+
+    0 0 15px rgba(79,195,255,.25);
+
+}
+
+
+
+#buscarPez::placeholder{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+
+
+#buscarPez:focus{
+
+    border-color:#4fc3ff;
+
+    box-shadow:
+
+    0 0 20px rgba(79,195,255,.6);
+
+}
+
+
+
+#filtroPez{
+
+    width:210px;
+
+    padding:14px 18px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(79,195,255,.4);
+
+    outline:none;
+
+    background:rgba(5,36,84,.85);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+
+
+#filtroPez option{
+
+    background:#052454;
+
+    color:white;
+
+}
+
+
+
+/* PECES */
+
+
+.pecesLista{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+
+
+.pezCard{
+
+    background:rgba(255,255,255,.07);
+
+    border-radius:18px;
+
+    padding:15px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    text-align:center;
+
+    transition:.25s;
+
+}
+
+
+
+.pezCard:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 0 20px rgba(79,195,255,.35);
+
+}
+
+
+
+.pezImagen{
+
+    width:100%;
+
+    max-width:150px;
+
+    height:120px;
+
+    object-fit:contain;
+
+}
+
+
+
+.peznombre{
+
+    color:#4fc3ff;
+
+    margin:10px 0;
+
+}
+
+
+
+.LinkDetalles{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    padding:8px 18px;
+
+    background:#0077b6;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+
+
+/* RESPONSIVE MOVIL */
+
+
+@media(max-width:600px){
+
+
+.textoBienvenida h1{
+
+    font-size:30px;
+
+}
+
+
+
+.welcome{
+
+    width:160px;
+
+}
+
+
+
+.telefono{
+
+    width:92vw;
+
+    max-width:340px;
+
+    height:600px;
+
+}
+
+
+
+.logoTelefono{
+
+    width:140px;
+
+}
+
+
+
+.pantallaTelefono h2{
+
+    font-size:30px;
+
+}
+
+
+
+.menuTelefono{
+
+    left:10px;
+
+    right:10px;
+
+    bottom:15px;
+
+    gap:7px;
+
+}
+
+
+
+.menuTelefono .tarjeta{
+
+    height:70px;
+
+}
+
+
+
+.menuTelefono .iconoTarjeta{
+
+    font-size:24px;
+
+}
+
+
+
+.menuTelefono h3{
+
+    font-size:9px;
+
+}
+
+
+
+.climaTelefonoCaja{
+
+    width:90%;
+
+    padding:20px;
+
+}
+
+
+
+.resultadoClima p{
+
+    font-size:13px;
+
+    padding:10px;
+
+}
+
+
+
+.pecesLista{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:8px;
+
+}
+
+
+
+.pezCard{
+
+    padding:8px;
+
+}
+
+
+
+.pezImagen{
+
+    max-width:100px;
+
+    height:90px;
+
+}
+
+
+
+#buscarPez,
+#filtroPez{
+
+    width:90%;
+
+    max-width:320px;
+
+}
+
+
+
+}
+.fishtrackTitulo{
+    font-size: 38px;
+    margin: 0;
+    position: relative;
+    bottom: 40px;
+    color: #fff;
+    text-align: center;
+}
+.fishtrackDescripcion{
+    font-size: 18px;
+    margin: 10px 0;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+}
